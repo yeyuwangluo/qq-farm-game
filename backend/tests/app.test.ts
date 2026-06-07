@@ -13,7 +13,10 @@ describe('Express Application', () => {
   it('应该有健康检查端点', async () => {
     const response = await request(app).get('/health');
     expect(response.status).toBe(200);
-    expect(response.body).toHaveProperty('status', 'ok');
-    expect(response.body).toHaveProperty('timestamp');
+    expect(response.body).toHaveProperty('success', true);
+    expect(response.body).toHaveProperty('message');
+    expect(response.body).toHaveProperty('data');
+    expect(response.body.data).toHaveProperty('status', 'ok');
+    expect(response.body.data).toHaveProperty('timestamp');
   });
 });

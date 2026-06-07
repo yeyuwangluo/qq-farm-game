@@ -3,7 +3,9 @@
  */
 import express from 'express';
 import cors from 'cors';
-import config from './config/index.js';
+import config from './config';
+import routes from './routes';
+import errorHandler from './middleware/error.middleware';
 
 const app = express();
 
@@ -17,43 +19,36 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// 请求日志中间件（开发环境）
+if (config.env === 'development') {
+  app.use((req, _res, next) => {
+    console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);
+    next();
+  });
+}
+
 // 健康检查端点
 app.get('/health', (_req, res) => {
   res.json({
-    status: 'ok',
-    timestamp: new Date().toISOString(),
-    environment: config.env,
-    port: config.port,
+    success: true,
+    message: 'Server is running',
+    data: {
+      status: 'ok',
+      timestamp: new Date().toISOString(),
+      environment: config.env,
+      port: config.port,
+      version: '1.0.0',
+    },
   });
 });
 
 // API路由
-// app.use('/api', routes);
+app.use('/api', routes);
 
 // 404处理
-app.use((_req, res) => {
-  res.status(404).json({
-    success: false,
-    error: { code: 'NOT_FOUND', message: 'Route not found', timestamp: Date.now() },
-  });
-});
+app.use(errorHandler.notFound);
 
-interface ErrorResponse {
-  message: string;
-  status?: number;
-  code?: string;
-}
-
-// 错误处理
-app.use((err: ErrorResponse, _req: express.Request, res: express.Response) => {
-  res.status(err.status || 500).json({
-    success: false,
-    error: {
-      code: err.code || 'SRV_001',
-      message: err.message || 'Internal server error',
-      timestamp: Date.now(),
-    },
-  });
-});
+// 全局错误处理
+app.use(errorHandler.errorHandler);
 
 export default app;

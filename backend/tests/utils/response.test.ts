@@ -13,9 +13,18 @@ describe('Response Utils', () => {
   describe('successResponse', () => {
     it('应该生成成功响应', () => {
       const data = { id: 1, name: 'Test' };
-      const response = successResponse(data);
+      const response = successResponse('Success', data);
       expect(response.success).toBe(true);
+      expect(response.message).toBe('Success');
       expect(response.data).toEqual(data);
+      expect(response.timestamp).toBeDefined();
+    });
+
+    it('应该生成成功响应（无数据）', () => {
+      const response = successResponse('Success');
+      expect(response.success).toBe(true);
+      expect(response.message).toBe('Success');
+      expect(response.data).toBeUndefined();
       expect(response.timestamp).toBeDefined();
     });
   });
