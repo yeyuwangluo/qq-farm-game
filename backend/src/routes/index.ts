@@ -4,8 +4,8 @@
 
 import { Router } from 'express';
 import authRoutes from './auth.routes';
-import farmRoutes from './farm.routes';
 import plotRoutes from './plot.routes';
+import farmRoutes from './farm.routes';
 import cropRoutes from './crop.routes';
 import animalRoutes from './animal.routes';
 import decorationRoutes from './decoration.routes';
@@ -18,8 +18,8 @@ import seasonRoutes from './season.routes';
 const router = Router();
 
 router.use('/auth', authRoutes);
-router.use('/farms', farmRoutes);
 router.use('/plots', plotRoutes);
+router.use('/farms', farmRoutes);
 router.use('/crops', cropRoutes);
 router.use('/animals', animalRoutes);
 router.use('/decorations', decorationRoutes);
