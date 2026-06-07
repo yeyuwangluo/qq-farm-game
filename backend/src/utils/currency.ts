@@ -65,7 +65,10 @@ export function getExperienceForLevel(level: number): number {
 /**
  * 获取当前等级进度
  */
-export function getLevelProgress(currentExp: number, level: number): {
+export function getLevelProgress(
+  currentExp: number,
+  level: number
+): {
   current: number;
   required: number;
   percentage: number;

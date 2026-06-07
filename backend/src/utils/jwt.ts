@@ -25,7 +25,7 @@ export function generateToken(payload: JWTPayload): string {
 export function verifyToken(token: string): JWTPayload {
   try {
     return jwt.verify(token, JWT_SECRET) as JWTPayload;
-  } catch (error) {
+  } catch {
     throw new Error('Invalid token');
   }
 }
@@ -51,7 +51,7 @@ export function generateRefreshToken(userId: number): string {
 export function verifyRefreshToken(token: string): { userId: number } {
   try {
     return jwt.verify(token, JWT_SECRET) as { userId: number };
-  } catch (error) {
+  } catch {
     throw new Error('Invalid refresh token');
   }
 }
