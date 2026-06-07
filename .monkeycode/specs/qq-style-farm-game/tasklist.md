@@ -25,7 +25,7 @@
     - 测试工具函数
 
 - [ ] 2. 初始化后端项目结构
-  - [ ] 2.1 创建Node.js + Express.js项目
+  - [x] 2.1 创建Node.js + Express.js项目
     - 初始化npm项目并配置package.json
     - 配置TypeScript编译选项
     - 创建项目目录结构（src/controllers、src/services、src/models、src/middleware、src/routes、src/utils）
