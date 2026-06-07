@@ -27,6 +27,7 @@ router.use('/items', itemRoutes);
 router.use('/social', socialRoutes);
 router.use('/quests', questRoutes);
 router.use('/achievements', achievementRoutes);
+router.use('/game/season', seasonRoutes);
 router.use('/seasons', seasonRoutes);
 
 export default router;
