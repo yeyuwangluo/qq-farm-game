@@ -30,11 +30,13 @@ QQ农场游戏是一个基于Web的社交农场模拟游戏，玩家可以：
 - **WebSocket**: Socket.io-client
 - **测试**: Vitest + @testing-library/react
 
-### 后端（规划中）
-- **框架**: Node.js + Express.js
+### 后端
+- **框架**: Node.js + Express.js + TypeScript
 - **WebSocket**: Socket.io
 - **数据库**: MySQL 8.0 + Redis 7.0
 - **认证**: JWT
+- **进程管理**: PM2
+- **测试**: Vitest
 
 ## 项目结构
 
@@ -78,12 +80,16 @@ workspace/
 - ✅ 完整的TypeScript类型定义
 - ✅ 工具函数库
 - ✅ 单元测试框架（31个测试通过）
+- ✅ 后端项目基础结构搭建
+- ✅ TypeScript配置
+- ✅ 项目目录结构
 
 ### 进行中
-- 🔄 后端项目初始化
-- 🔄 数据库Schema设计
+- 🔄 后端开发环境和工具配置
+- 🔄 后端依赖安装
 
 ### 待开发
+- ⏳ 数据库Schema设计
 - ⏳ 认证系统
 - ⏳ 农场核心功能
 - ⏳ 经济和等级系统
@@ -98,10 +104,10 @@ workspace/
 
 ## 快速开始
 
-### 前端开发
+### 后端开发
 
 ```bash
-cd frontend
+cd backend
 npm install
 npm run dev
 ```
@@ -109,7 +115,12 @@ npm run dev
 ### 运行测试
 
 ```bash
+# 前端测试
 cd frontend
+npm run test:run
+
+# 后端测试
+cd backend
 npm run test:run
 ```
 
