@@ -83,10 +83,14 @@ workspace/
 - ✅ 后端项目基础结构搭建
 - ✅ TypeScript配置
 - ✅ 项目目录结构
+- ✅ Express.js服务器和中间件
+- ✅ TypeScript热重载（tsx watch）
+- ✅ ESLint和Prettier配置
+- ✅ 开发环境测试（24个测试通过）
+- ✅ 开发服务器启动（端口3001）
 
 ### 进行中
-- 🔄 后端开发环境和工具配置
-- 🔄 后端依赖安装
+- 🔄 后端依赖安装（Express、Socket.io、数据库等）
 
 ### 待开发
 - ⏳ 数据库Schema设计

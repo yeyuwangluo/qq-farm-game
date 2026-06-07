@@ -2,6 +2,7 @@
  * Express应用基础测试
  */
 import { describe, it, expect } from 'vitest';
+import request from 'supertest';
 import app from '../src/app';
 
 describe('Express Application', () => {
@@ -9,11 +10,10 @@ describe('Express Application', () => {
     expect(app).toBeDefined();
   });
 
-  it('应该有健康检查端点', () => {
-    const routes = app._router.stack;
-    const healthRoute = routes.some((route: any) => 
-      route.route && route.route.path === '/health'
-    );
-    expect(healthRoute).toBe(true);
+  it('应该有健康检查端点', async () => {
+    const response = await request(app).get('/health');
+    expect(response.status).toBe(200);
+    expect(response.body).toHaveProperty('status', 'ok');
+    expect(response.body).toHaveProperty('timestamp');
   });
 });

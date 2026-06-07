@@ -29,10 +29,10 @@
     - 初始化npm项目并配置package.json
     - 配置TypeScript编译选项
     - 创建项目目录结构（src/controllers、src/services、src/models、src/middleware、src/routes、src/utils）
-  - [ ] 2.2 配置后端开发环境和工具
-    - 配置Express.js服务器和中间件
-    - 配置TypeScript编译和热重载
-    - 配置ESLint和Prettier代码规范
+  - [x] 2.2 配置后端开发环境和工具
+    - [x] 配置Express.js服务器和中间件
+    - [x] 配置TypeScript编译和热重载
+    - [x] 配置ESLint和Prettier代码规范
   - [ ] 2.3 设置后端依赖和工具库
     - 安装Express.js及相关中间件（cors、helmet、body-parser）
     - 安装Socket.io用于WebSocket服务

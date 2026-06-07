@@ -22,16 +22,24 @@ app.get('/health', (_req, res) => {
 
 // 404处理
 app.use((_req, res) => {
-  res.status(404).json({ success: false, error: { code: 'NOT_FOUND', message: 'Route not found', timestamp: Date.now() } });
+  res.status(404).json({
+    success: false,
+    error: { code: 'NOT_FOUND', message: 'Route not found', timestamp: Date.now() },
+  });
 });
 
+interface ErrorResponse {
+  message: string;
+  status?: number;
+  code?: string;
+}
+
 // 错误处理
-app.use((err: any, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
-  console.error('Error:', err);
-  res.status(500).json({
+app.use((err: ErrorResponse, _req: express.Request, res: express.Response) => {
+  res.status(err.status || 500).json({
     success: false,
     error: {
-      code: 'SRV_001',
+      code: err.code || 'SRV_001',
       message: err.message || 'Internal server error',
       timestamp: Date.now(),
     },
