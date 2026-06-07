@@ -50,32 +50,32 @@
     - [x] 测试JWT工具函数
     - [x] 测试密码加密工具函数
 
-- [ ] 3. 数据库初始化和Schema创建
-  - [ ] 3.1 创建MySQL数据库Schema
-    - 执行用户表创建SQL（users）- 需求6、14
-    - 执行农场表创建SQL（farms、plots）- 需求1、14
-    - 执行作物表创建SQL（crops、crop_types）- 需求2、13
-    - 执行动物表创建SQL（animal_pens、animals、animal_types）- 需求3、13
-    - 执行装饰物表创建SQL（decorations、decoration_types）- 需求10
-    - 执行物品表创建SQL（inventory、items、item_types）- 需求5
-    - 执行社交表创建SQL（friendships、social_activities）- 需求7
-    - 执行任务表创建SQL（quests、user_quests）- 需求9
-    - 执行成就表创建SQL（achievements、user_achievements）- 需求8
-    - 执行通知表创建SQL（notifications）- 需求12
-    - 执行游戏配置表创建SQL（game_config）- 需求13
-  - [ ] 3.2 创建数据库索引
-    - 为所有外键和常用查询字段创建索引
-  - [ ] 3.3 初始化游戏配置数据
-    - 插入默认游戏配置数据（经济参数、游戏参数、升级参数）
-  - [ ] 3.4 初始化游戏基础数据
-    - 插入默认作物类型（小麦、玉米、番茄等）
-    - 插入默认动物类型（鸡、牛、猪等）
-    - 插入默认装饰物类型
-    - 插入默认物品类型（种子、饲料、化肥等）
-  - [ ] 3.5 编写数据库Schema验证测试
-    - 验证所有表结构和约束
-    - 验证索引创建
-    - 验证初始数据插入
+- [x] 3. 数据库初始化和Schema创建
+  - [x] 3.1 创建MySQL数据库Schema
+    - [x] 执行用户表创建SQL（users）- 需求6、14
+    - [x] 执行农场表创建SQL（farms、plots）- 需求1、14
+    - [x] 执行作物表创建SQL（crops、crop_types）- 需求2、13
+    - [x] 执行动物表创建SQL（animal_pens、animals、animal_types）- 需求3、13
+    - [x] 执行装饰物表创建SQL（decorations、decoration_types）- 需求10
+    - [x] 执行物品表创建SQL（inventory、items、item_types）- 需求5
+    - [x] 执行社交表创建SQL（friendships、social_activities）- 需求7
+    - [x] 执行任务表创建SQL（quests、user_quests）- 需求9
+    - [x] 执行成就表创建SQL（achievements、user_achievements）- 需求8
+    - [x] 执行通知表创建SQL（notifications）- 需求12
+    - [x] 执行游戏配置表创建SQL（game_config）- 需求13
+  - [x] 3.2 创建数据库索引
+    - [x] 为所有外键和常用查询字段创建索引
+  - [x] 3.3 初始化游戏配置数据
+    - [x] 插入默认游戏配置数据（经济参数、游戏参数、升级参数）
+  - [x] 3.4 初始化游戏基础数据
+    - [x] 插入默认作物类型（小麦、玉米、番茄等）
+    - [x] 插入默认动物类型（鸡、牛、猪等）
+    - [x] 插入默认装饰物类型
+    - [x] 插入默认物品类型（种子、饲料、化肥等）
+  - [x] 3.5 编写数据库Schema验证测试
+    - [x] 验证所有表结构和约束
+    - [x] 验证索引创建
+    - [x] 验证初始数据插入
 
 - [ ] 4. 检查点 - 确保所有测试通过
   - 确保所有测试通过，如有疑问请询问用户
