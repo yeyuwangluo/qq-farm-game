@@ -33,13 +33,13 @@
     - [x] 配置Express.js服务器和中间件
     - [x] 配置TypeScript编译和热重载
     - [x] 配置ESLint和Prettier代码规范
-  - [ ] 2.3 设置后端依赖和工具库
-    - 安装Express.js及相关中间件（cors、helmet、body-parser）
-    - 安装Socket.io用于WebSocket服务
-    - 安装MySQL2和Redis客户端用于数据库连接
-    - 安装jsonwebtoken用于JWT认证
-    - 安装bcrypt用于密码加密
-    - 安装PM2用于进程管理
+  - [x] 2.3 设置后端依赖和工具库
+    - [x] 安装Express.js及相关中间件（cors、helmet、body-parser）
+    - [x] 安装Socket.io用于WebSocket服务
+    - [x] 安装MySQL2和Redis客户端用于数据库连接
+    - [x] 安装jsonwebtoken用于JWT认证
+    - [x] 安装bcrypt用于密码加密
+    - [x] 安装PM2用于进程管理
   - [ ] 2.4 创建后端基础配置文件
     - 创建环境变量配置文件
     - 创建数据库连接配置（MySQL和Redis）
