@@ -3,23 +3,23 @@
 ## 阶段1：项目基础设施搭建
 
 - [ ] 1. 初始化前端项目结构
-  - [ ] 1.1 创建React + TypeScript项目
+  - [x] 1.1 创建React + TypeScript项目
     - 使用Vite创建新项目
     - 配置Tailwind CSS响应式设计
     - 设置项目目录结构（src/components、src/services、src/hooks、src/types、src/utils）
-  - [ ] 1.2 配置前端开发环境和构建工具
+  - [x] 1.2 配置前端开发环境和构建工具
     - 配置Vite开发服务器和代理
     - 配置TypeScript编译选项
     - 配置ESLint和Prettier代码规范
-  - [ ] 1.3 设置前端依赖和工具库
+  - [x] 1.3 设置前端依赖和工具库
     - 安装Socket.io-client用于WebSocket通信
     - 安装Axios用于HTTP请求
     - 安装React Router用于路由管理
-  - [ ] 1.4 创建前端基础配置文件
+  - [x] 1.4 创建前端基础配置文件
     - 创建环境变量配置文件
     - 创建API客户端配置（axios实例）
     - 创建WebSocket客户端配置（socket.io实例）
-  - [ ] 1.5 为前端工具函数编写单元测试
+  - [x] 1.5 为前端工具函数编写单元测试
     - 测试API客户端配置
     - 测试WebSocket客户端配置
     - 测试工具函数
