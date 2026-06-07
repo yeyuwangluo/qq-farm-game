@@ -220,7 +220,7 @@ class AnimalModel {
    */
   async findProducingAnimals(): Promise<any[]> {
     const result = await Database.query<any>(
-      `SELECT a.*, at.product_time 
+      `SELECT a.*, at.product_time
        FROM animals a
        JOIN animal_types at ON a.animal_type_id = at.id
        WHERE a.state = ? AND a.last_fed_at IS NOT NULL`,
@@ -239,6 +239,38 @@ class AnimalModel {
       [AnimalState.PRODUCING, fourHoursAgo]
     );
     return result.rows;
+  }
+
+  /**
+   * 查找所有产品就绪但未通知的动物
+   */
+  async findReadyAnimalsWithoutNotification(): Promise<any[]> {
+    const result = await Database.query(`
+      SELECT a.*, at.name as animal_type_name, at.product_name
+      FROM animals a
+      JOIN animal_types at ON a.animal_type_id = at.id
+      WHERE a.state = ? AND a.notified_at IS NULL
+    `, [AnimalState.READY]);
+    return result.rows;
+  }
+
+  /**
+   * 标记动物为已通知
+   */
+  async markAnimalAsNotified(animalId: number): Promise<boolean> {
+    const affectedRows = await Database.update(
+      'animals',
+      { notified_at: new Date() },
+      { field: 'id', value: animalId }
+    );
+    return affectedRows > 0;
+  }
+
+  /**
+   * 获取动物类型信息
+   */
+  async getAnimalTypeById(animalTypeId: number): Promise<any> {
+    return await Database.findById('animal_types', animalTypeId);
   }
 }
 

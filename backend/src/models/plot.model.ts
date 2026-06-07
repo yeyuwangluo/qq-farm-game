@@ -176,6 +176,38 @@ class PlotModel {
   }
 
   /**
+   * 查找所有已经成熟但未通知的作物
+   */
+  async findReadyPlotsWithoutNotification(): Promise<any[]> {
+    const result = await Database.query(`
+      SELECT p.*, ct.name as crop_name, ct.id as crop_type_id
+      FROM plots p
+      JOIN crop_types ct ON p.crop_id = ct.id
+      WHERE p.state = ? AND p.notified_at IS NULL
+    `, [PlotState.READY]);
+    return result.rows;
+  }
+
+  /**
+   * 标记作物为已通知
+   */
+  async markCropAsNotified(plotId: number): Promise<boolean> {
+    const affectedRows = await Database.update(
+      'plots',
+      { notified_at: new Date() },
+      { field: 'id', value: plotId }
+    );
+    return affectedRows > 0;
+  }
+
+  /**
+   * 获取作物类型信息
+   */
+  async getCropTypeById(cropId: number): Promise<any> {
+    return await Database.findById('crop_types', cropId);
+  }
+
+  /**
    * 删除土地
    */
   async delete(plotId: number): Promise<boolean> {
