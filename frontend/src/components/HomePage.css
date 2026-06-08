@@ -1,0 +1,56 @@
+/**
+ * 首页样式
+ */
+
+.home-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0f7fa 0%, #f1f8e9 100%);
+}
+
+.home-header {
+  background: white;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.home-header h1 {
+  color: #667eea;
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+}
+
+.home-header p {
+  color: #666;
+  margin: 0.5rem 0;
+  font-size: 1.125rem;
+}
+
+.home-content {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.home-content p {
+  color: #666;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.home-content button {
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.home-content button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
